@@ -29,8 +29,6 @@ type GameState = "lobby" | "playing" | "voting" | "results";
 
 const timeOptions = [30, 60, 90, 120];
 
-export const dynamic = "force-dynamic";
-
 export default function SalaPage() {
   return (
     <Suspense fallback={
