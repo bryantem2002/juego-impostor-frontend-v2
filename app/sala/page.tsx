@@ -1,8 +1,6 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback,Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Crown, User, X, Volume2, VolumeX, Link2, Play, Send, LogOut, Users, Clock, ChevronDown, ChevronUp, Minus, Plus, AlertTriangle, MessageCircle, Vote, StopCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { MatchCountdown } from "@/components/game/match-countdown";
 import { socket } from "@/lib/socket";
 import { cn } from "@/lib/utils";
+
 
 interface Player {
   id: string;
@@ -30,7 +29,20 @@ type GameState = "lobby" | "playing" | "voting" | "results";
 
 const timeOptions = [30, 60, 90, 120];
 
+export const dynamic = "force-dynamic";
+
 export default function SalaPage() {
+  return (
+    <Suspense fallback={
+      <div className="h-screen bg-[#0f0f1a] flex items-center justify-center text-white">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-primary"></div>
+      </div>
+    }>
+      <SalaContent /> 
+    </Suspense>
+  );
+}
+function SalaContent() { 
   const searchParams = useSearchParams();
   const router = useRouter();
   const roomCode = searchParams.get("code") || "";
