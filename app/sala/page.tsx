@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Crown, User, X, Volume2, VolumeX, Link2, Play, Send, LogOut, Users, Clock, ChevronDown, ChevronUp, Minus, Plus, AlertTriangle, MessageCircle, Vote, StopCircle } from "lucide-react";
