@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 
 import { Header } from "@/components/lobby/header";
 import { PlayerSetup } from "@/components/lobby/player-setup";
