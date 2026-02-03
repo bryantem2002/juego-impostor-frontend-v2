@@ -9,25 +9,21 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Impostor Games - El Juego del Engaño',
-  description: 'Un juego de detectives y engaño donde descubrir al impostor es la clave de la victoria',
+  title: 'Impostor Games - Bryan',
+  description: 'Un juego de detectives',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/icon-light-32x32.png?v=4', // Agregamos ?v=4
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/icon-dark-32x32.png?v=4',  // Agregamos ?v=4
         media: '(prefers-color-scheme: dark)',
       },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
     ],
-    apple: '/apple-icon.png',
+    apple: '/apple-icon.png?v=4',
   },
 }
 
